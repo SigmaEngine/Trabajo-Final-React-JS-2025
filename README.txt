@@ -16,7 +16,7 @@ La aplicación es una tienda online de productos de automovilismo, con sistema d
 > Para Instalarlo:
 
 1. Clonar el repositorio:
-git clone https://github.com/usuario/motorsport-store.git
+git clone
 
 2. Instalar dependencias:
 npm install o i
