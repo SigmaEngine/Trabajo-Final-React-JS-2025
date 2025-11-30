@@ -1,0 +1,49 @@
+.checkout-container {
+  max-width: 600px;
+}
+
+/* Tarjeta visual */
+.credit-card {
+  background: linear-gradient(135deg, #0061ff, #60efff);
+  padding: 20px;
+  border-radius: 16px;
+  color: white;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  font-family: "Roboto", sans-serif;
+}
+
+.cc-chip {
+  width: 45px;
+  height: 32px;
+  background: gold;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.cc-number {
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.cc-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.cc-label {
+  opacity: 0.8;
+}
+
+.payment-box {
+  background: white;
+  padding: 20px;
+  margin-top: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.confirm-box {
+  text-align: center;
+}

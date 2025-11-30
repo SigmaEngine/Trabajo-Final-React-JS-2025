@@ -1,0 +1,118 @@
+/* ==== Fondo principal ==== */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: rgb(0, 0, 0);
+}
+
+.app-hero {
+  position: relative;
+  min-height: 100vh;
+  background-image: url('/fondo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll; /* más seguro en móviles */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Capa oscura encima del fondo para mejor legibilidad */
+.app-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 1;
+}
+
+/* Contenido sobre el fondo */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  padding: 2rem;
+}
+
+/* Efecto “vidrio” */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  display: inline-block;
+}
+
+/* Título principal */
+.hero-title {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+/* Subtítulo */
+.hero-sub {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Botón principal */
+.btn-primary {
+  background: #e50914; /* rojo estilo Netflix */
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+}
+.btn-primary:hover {
+  background: #f40612;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+  .hero-content {
+    padding: 1.5rem;
+  }
+  .glass {
+    padding: 1rem;
+  }
+}
+
+/* Texto blanco solo en el fondo (hero) */
+.app-hero .hero-title,
+.app-hero .hero-sub,
+.app-hero .glass {
+  color: #fff;
+}
+
+/* Input con texto oscuro pero sin perder contraste */
+.app-hero input {
+  color: #000;
+}
+
+/* El resto del sitio (como las categorías) sigue con texto negro */
+body, .hero-content + div, .hero-content + section, .categories-section, h2, p, h3 {
+  color: #000;
+}
+
+/* Efecto de desaparición suave al hacer scroll */
+.app-hero {
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+body.scrolled .app-hero {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+}
+
